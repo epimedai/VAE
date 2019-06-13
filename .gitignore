@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Zip files
+*.zip
+
+# Mat files
+*.mat
