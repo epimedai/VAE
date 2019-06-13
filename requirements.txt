@@ -2,3 +2,5 @@ numpy
 matplotlib
 jupyter
 h5py
+tensorflow
+keras
