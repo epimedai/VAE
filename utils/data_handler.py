@@ -11,8 +11,13 @@ FILE_NAME = 'cheng_data.zip'
 
 def download_data(url='https://ndownloader.figshare.com/articles/1512427/versions/5'):
     file_name = FILE_NAME
+    if os.path.exists(DATA_PATH+file_name):
+        print ('Already downloaded, you can continue')
+        return
+    
     open_url = urllib.urlopen(url)
     open_file = open(DATA_PATH+file_name, 'wb')
+    
     meta = open_url.info()
     file_size = int(open_url.getheader("Content-Length"))
     
@@ -45,6 +50,10 @@ def download_data(url='https://ndownloader.figshare.com/articles/1512427/version
     open_file.close()
     
 def extract_data():
+    if os.path.exists(DATA_PATH+'mat_files/'):
+        print('Already extracted - you can continue')
+        return
+    
     with zipfile.ZipFile(DATA_PATH+FILE_NAME,"r") as zip_ref:
         zip_ref.extractall(DATA_PATH + 'temp/')
     
@@ -66,6 +75,10 @@ def load_mat(path):
     return img
 
 def load_data():
+    def _normalize(array):
+        temp = (array-np.min(array))/(np.max(array)-np.min(array))
+        return np.array(temp).astype(np.float32)
+
     x = []
     for root, _, files in os.walk(DATA_PATH+'mat_files/'):
         for file in files:
@@ -76,4 +89,4 @@ def load_data():
                 x.append(img)
     x = np.array(x)
     x = x.reshape((*x.shape, 1))
-    return x
+    return _normalize(x)
