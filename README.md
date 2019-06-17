@@ -2,7 +2,7 @@
 A step by step guide for creating your very own variational autoencoder.
 
 ## Jupyter notebooks
-[Jupyter notebook](http://www.jupyter.org) is a web application for running and sharing code and documentation in a user friendly and readable format. To start, run jupyter from the terminal (note: You should be in the folder where guide.ipynb is located, which should be the root folder of this repo):
+[Jupyter notebook](http://www.jupyter.org) is a web application for running and sharing code and documentation in a user friendly and readable format. To start, run jupyter from the terminal (note: You should be in the folder where "VAE guide.ipynb" is located, which should be the root folder of this repo):
 
 ```
 (ml) $ jupyter notebook

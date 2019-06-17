@@ -12,7 +12,7 @@ FILE_NAME = 'cheng_data.zip'
 def download_data(url='https://ndownloader.figshare.com/articles/1512427/versions/5'):
     file_name = FILE_NAME
     if os.path.exists(DATA_PATH+file_name):
-        print ('Already downloaded, you can continue')
+        print ('Already downloaded - you can continue')
         return
     
     open_url = urllib.urlopen(url)
@@ -86,7 +86,8 @@ def load_data():
                 img = load_mat(os.path.join(root, file))
                 if img.shape!= (512,512):
                     continue
+                img = _normalize(img)
                 x.append(img)
     x = np.array(x)
     x = x.reshape((*x.shape, 1))
-    return _normalize(x)
+    return x
