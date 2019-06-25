@@ -1,8 +1,8 @@
 # Convolutional VAE
 A step by step guide for creating your very own variational autoencoder.
 
-## Enviroment
-For this tutorial, we'll create a new Python environment so you can run the scripts. You'll nedd a package-handler, such as [Anaconda](https://docs.conda.io/en/latest/miniconda.html), or [MiniConda](https://docs.conda.io/en/latest/miniconda.html). The packages required is listed in requirements.txt, but I'll guide you thorugh the installation process if you're using Anaconda or MiniConda. First, make sure you are in the directory of this tutorial. Than, we'll create an environment:
+## Python Environment
+For this tutorial, we'll create a new Python environment so you can run the scripts. You'll need a package-handler, such as [Anaconda](https://docs.conda.io/en/latest/miniconda.html), or [MiniConda](https://docs.conda.io/en/latest/miniconda.html). The packages required is listed in requirements.txt, but I'll guide you thorugh the installation process if you're using Anaconda or MiniConda. First, make sure you are in the directory of this tutorial. Than, we'll create an environment:
 ```
 conda create --name VAE_guide python==3.6
 ```
